@@ -469,6 +469,10 @@ func renderFile(ctx *context.Context, entry *git.TreeEntry, treeLink, rawLink st
 	}
 
 	switch {
+        case base.IsDrawioFile(blob.Name()):
+                ctx.Data["IsDrawioFile"] = true
+                ctx.Data["DrawioEndpoint"] = setting.DrawioConfig.Endpoint
+
 	case isRepresentableAsText:
 		// This will be true for SVGs.
 		if base.IsImageFile(buf) {

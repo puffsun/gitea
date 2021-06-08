@@ -323,6 +323,11 @@ func IsPDFFile(data []byte) bool {
 	return strings.Contains(DetectContentType(data), "application/pdf")
 }
 
+// IsDrawioFile detects if data is drawio format
+func IsDrawioFile(name string) bool {
+       return strings.HasSuffix(name, setting.DrawioConfig.Suffix)
+}
+
 // IsVideoFile detects if data is an video format
 func IsVideoFile(data []byte) bool {
 	return strings.Contains(DetectContentType(data), "video/")

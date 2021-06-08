@@ -1172,4 +1172,5 @@ func NewServices() {
 	newTaskService()
 	NewQueueService()
 	newProject()
+	newDrawioService()
 }
